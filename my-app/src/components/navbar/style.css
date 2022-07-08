@@ -1,0 +1,12 @@
+.container {
+    color: #2e9ce5;
+    background-color: #eeeeee;
+}
+
+/*EAE7DC*/
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
