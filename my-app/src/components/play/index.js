@@ -2,6 +2,13 @@ import React, {useState} from "react";
 import './style.css'
 import rules from '../../rules.json'
 import category from '../../category.json'
+import love from '../../assets/love.png'
+import moneyWork from '../../assets/moneyAndWork.png'
+import personalityExperience from '../../assets/personalityExperience.png'
+import relationship from '../../assets/relationship.png'
+import sex from '../../assets/sex.png'
+import question from '../../assets/question.png'
+
 
 
 export const Play = () => {
@@ -49,9 +56,28 @@ export const Play = () => {
 
 
     const game = () => {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        const [random, setRandom] = useState(<img src={question} width={'100px'}/>)
+
+        const categoryArray = [love, personalityExperience, moneyWork, sex, relationship]
+
+        const handleRandomImage = () => {
+          setRandom(<img src={categoryArray[0]} width={'100px'}/>)
+        }
+
       return (
           <div className="game">
+              <div className="cards">
+                  <div className={"card"} id={'moneyWork'}><img src={moneyWork}/></div>
+                  <div className={"card"} id={'love'}><img src={love}/></div>
+                  <div className={"card"} id={'personalityExperience'}><img src={personalityExperience}/></div>
+                  <div className={"card"} id={'relationship'}><img src={relationship}/></div>
+                  <div className={"card"} id={'sex'}><img src={sex}/></div>
+              </div>
 
+              <div className="random">
+                  <a onClick={handleRandomImage}>{random}</a>
+              </div>
           </div>
       )
     }
@@ -62,3 +88,5 @@ export const Play = () => {
         </div>
     )
 }
+
+export default Play;
