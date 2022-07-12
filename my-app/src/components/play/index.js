@@ -76,7 +76,7 @@ export const Play = () => {
               </div>
 
               <div className="random">
-                  <a onClick={handleRandomImage}>{random}</a>
+                  <div onClick={handleRandomImage}>{random}</div>
               </div>
           </div>
       )
