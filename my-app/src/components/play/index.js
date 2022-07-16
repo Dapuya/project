@@ -13,16 +13,7 @@ import question from '../../assets/question.png'
 
 export const Play = () => {
     function showRules() {
-        return (
-            <div className="ruleCard">
-                <h3>Правила</h3>
-                <ol id={'rulesOrderList'}>
-                    <li classname={'categoriesListItem'}>{rules[0].text}</li>
-                    <li classname={'categoriesListItem'}>{rules[1].text}</li>
-                </ol>
-                <p>Коснитесь, чтобы продолжить</p>
-            </div>
-        )
+
     }
 
 
