@@ -17,9 +17,6 @@ function App() {
       <BrowserRouter>
           <Navbar></Navbar>
 
-          <Footer></Footer>
-
-
           <Routes>
               <Route path='/' element={<Main></Main>}/>
               <Route path='play' element={<Play></Play>}/>
@@ -27,6 +24,7 @@ function App() {
               <Route path='/categories' element={<Categories></Categories>}/>
           </Routes>
 
+          <Footer></Footer>
 
       </BrowserRouter>
 

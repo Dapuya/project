@@ -2,26 +2,26 @@
   {
     "id": 1,
     "name": "Личность и опыт",
-    "isActive": false
+    "active": false
   },
   {
     "id": 2,
     "name": "Любовь",
-    "isActive": false
+    "active": false
   },
   {
     "id": 3,
     "name": "Отношения с людьми",
-    "isActive": false
+    "active": false
   },
   {
     "id": 4,
     "name": "Работа и деньги",
-    "isActive": false
+    "active": false
   },
   {
     "id": 5,
     "name": "Секс",
-    "isActive": false
+    "active": false
   }
 ]

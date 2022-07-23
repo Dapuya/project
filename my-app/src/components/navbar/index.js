@@ -1,5 +1,6 @@
 import menu from "../../assets/menu.png";
 import rules from "../../assets/rules.png";
+import home from "../../assets/home.png"
 import React from "react";
 import './style.css';
 import {useNavigate} from "react-router-dom";
@@ -13,6 +14,7 @@ export const Navbar = () => {
         <div className={'container'}>
             <div className={"content"}>
                 <div className="buttons">
+                    <button className={'button'} id={'home'} onClick={() => navigate("/")}><img id={'home'} src={home} alt={'home'} width={'30px'}/></button>
                     <button className={"button"} id={"categories"} onClick={() => navigate("/categories")}><img id={'categories'} src={menu} alt={'categories'}
                                                                         width={'30px'}/></button>
                     <button className={'button'} id={'rules'} onClick={() => navigate("/rules")}><img id={'rules'} src={rules} alt={'rules'}

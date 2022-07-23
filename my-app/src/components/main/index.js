@@ -1,14 +1,8 @@
 import './style.css'
 import React from 'react';
-import Play from "../play";
-import Footer from "../footer";
 import {Outlet} from "react-router-dom";
 import {useNavigate} from "react-router-dom";
 
-
-
-import rules from '../../assets/rules.png'
-import menu from '../../assets/menu.png'
 
 export const Main = () => {
     const navigate = useNavigate();
@@ -21,7 +15,7 @@ export const Main = () => {
 
 
 
-            <div className="box-1" onClick={() => navigate("/play")}>
+            <div className="box-1" onClick={() => navigate("/rules")}>
                 <div className="btn btn-one">
                     {/* eslint-disable-next-line no-restricted-globals */}
                     <span to='/play'>Начать</span>
