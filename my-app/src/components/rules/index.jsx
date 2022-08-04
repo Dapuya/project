@@ -1,6 +1,6 @@
 import rules from "../../rules.json";
 import React from "react";
-import './style.css'
+import './rulesStyle.css'
 import {useNavigate} from "react-router-dom";
 
 

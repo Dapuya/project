@@ -35,3 +35,17 @@
     font-size: 20px;
     color: #1b4788;
 }
+
+p {
+    opacity: .4;
+    transition: all 0.4s ease;
+    position: relative;
+    bottom: 0;
+    left: 45%;
+
+}
+
+p:hover{
+    opacity: .7;
+    cursor: pointer;
+}

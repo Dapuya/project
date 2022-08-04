@@ -2,26 +2,31 @@
   {
     "id": 1,
     "name": "Личность и опыт",
-    "active": false
+    "photo": "personalityExperience",
+    "chosen": false
   },
   {
     "id": 2,
     "name": "Любовь",
-    "active": false
+    "photo": "love",
+    "chosen": false
   },
   {
     "id": 3,
     "name": "Отношения с людьми",
-    "active": false
+    "photo": "relationship",
+    "chosen": false
   },
   {
     "id": 4,
     "name": "Работа и деньги",
-    "active": false
+    "photo": "moneyWork",
+    "chosen": false
   },
   {
     "id": 5,
     "name": "Секс",
-    "active": false
+    "photo": "sex",
+    "chosen": false
   }
 ]

@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "category": "sex",
+    "question": "question1"
+  },
+  {
+    "id": 2,
+    "category": "sex",
+    "question": "question2"
+  }
+  ,
+  {
+  "id": 3,
+  "category": "sex",
+  "question": "question3"
+  },
+  {
+    "id": 4,
+    "category": "sex",
+    "question": "question4"
+  },
+  {
+    "id": 5,
+    "category": "sex",
+    "question": "question5"
+  },
+  {
+    "id": 6,
+    "category": "sex",
+    "question": "question6"
+  }
+]
