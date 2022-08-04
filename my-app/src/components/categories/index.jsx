@@ -28,6 +28,7 @@ export const Categories = () => {
             <ul id={'categoriesUnorderedList'}>
                 {categories.map((category) => (
                     <li
+                        style={{ backgroundColor: category.chosen ? '#80addc' : '#eeeeee'}}
                         className={'categoriesListItem'}
                         onClick={() => handleItemIsActive(category)}
                         key={category.id}

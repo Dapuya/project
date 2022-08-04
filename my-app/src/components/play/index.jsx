@@ -26,74 +26,115 @@ const cards = [
         id: "1",
         variant: "moneyWork",
         front: {moneyWorkImage},
-        back: {}
+        back: {},
+        flip: false
     },
     {
         id: "2",
         variant: "love",
         front: {loveImage},
-        back: {}
+        back: {},
+        flip: false
     },
     {
         id: "3",
         variant: "personalityExperience",
         front: {personalityExperienceImage},
-        back: {}
+        back: {},
+        flip: false
     },
     {
         id: "4",
         variant: "relationship",
         front: {relationshipImage},
-        back: {}
+        back: {},
+        flip: false
     },
     {
         id: "5",
         variant: "sex",
         front: {sexImage},
-        back: {}
+        back: {},
+        flip: false
     }
 ];
+
 
 export const Play = () => {
     const [random, setRandom] = useState(<img src={questionSign} width={'100px'}/>)
 
-    const categoryArray = [loveImage, personalityExperienceImage, moneyWorkImage, sexImage, relationshipImage]
-    const index = Math.floor(Math.random() * categoryArray.length);
+    const [ flip, setFlip] = useState( () => cards)
 
+    const handleRandomImage = () => {
+        const chosenCategories = []
 
-    const openCard = (randomImage) => {
+        for (let i =0; i < 5; i += 1){
+            if (categories[i].chosen ){
+                if (categories[i].photo === 'love.png') {
+                    chosenCategories.push(loveImage)
+                }
+                if (categories[i].photo === 'moneyWork.png') {
+                    chosenCategories.push(moneyWorkImage)
+                }
+                if (categories[i].photo === 'relationship.png') {
+                    chosenCategories.push(relationshipImage)
+                }
+                if (categories[i].photo === 'sex.png') {
+                    chosenCategories.push(sexImage)
+                }
+                if (categories[i].photo === 'personalityExperience.png') {
+                    chosenCategories.push(personalityExperienceImage)
+                }
+            }
+        }
+
+        const index = Math.floor(Math.random() * chosenCategories.length);
+        const randomImage = chosenCategories[index]
+        setRandom(<img src={randomImage} width={'80px'}/>)
+
         if (randomImage === loveImage){
             const randomNum = Math.random()*5 - 1
             const randomQuestion = loveQ[randomNum].question
-
             return (
                 <div className={'question'}> {randomQuestion} </div>
             )
         }
-        if (randomImage === personalityExperienceImage){
 
-        }
-        if (randomImage === moneyWorkImage){
-
-        }
-        if (randomImage === relationshipImage){
-
-        }
-        if (randomImage === sexImage){
-
+        else if (randomImage === personalityExperienceImage){
+            const randomNum = Math.random()*5 - 1
+            const randomQuestion = personalityExperienceQ[randomNum]
+            return (
+                <div className={'question'}> {randomQuestion} </div>
+            )
         }
 
+        else if (randomImage === moneyWorkImage){
+            const randomNum = Math.random()*5 - 1
+            const randomQuestion = moneyWorkQ[randomNum].question
+            return (
+                <div className={'question'}> {randomQuestion} </div>
+            )
+        }
 
+        else if (randomImage === relationshipImage){
+            if (randomImage === relationshipImage){
+                const randomNum = Math.random()*5 - 1
+                const randomQuestion = relationshipQ[randomNum].question
+                return (
+                    <div className={'question'}> {randomQuestion} </div>
+                )
+            }
+        }
 
-    }
-
-
-
-    const handleRandomImage = () => {
-        const randomImage = categoryArray[index]
-        setRandom(<img src={randomImage} width={'80px'}/>)
-
-        openCard(randomImage);
+        else if (randomImage === sexImage){
+            if (randomImage === sexImage){
+                const randomNum = Math.random()*5-1
+                const randomQuestion = sexQ[randomNum].question
+                return (
+                    <div className={'question'}> {randomQuestion} </div>
+                )
+            }
+        }
     }
 
 
@@ -129,7 +170,7 @@ export const Play = () => {
             <div className="game">
                 <div className="cards">
                     {categories.map((category) => (
-                        <div
+                        <div className={'front'}
                         key={category.name}>{chosenCategories(category)}</div>
                     ))}
                 </div>

@@ -15,8 +15,8 @@ export const Main = () => {
 
 
 
-            <div className="box-1" onClick={() => navigate("/rules")}>
-                <div className="btn btn-one">
+            <div className="box-1" >
+                <div className="btn btn-one" onClick={() => navigate("/rules")}>
                     {/* eslint-disable-next-line no-restricted-globals */}
                     <span to='/play'>Начать</span>
                 </div>

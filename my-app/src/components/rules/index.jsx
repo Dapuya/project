@@ -15,7 +15,7 @@ export const Rules = () => {
                 <li classname={'categoriesListItem'}>{rules[0].text}</li>
                 <li classname={'categoriesListItem'}>{rules[1].text}</li>
             </ul>
-            <p onClick={() => navigate("/categories")}>Коснитесь, чтобы продолжить</p>
+            <p id={'rulesButton'} onClick={() => navigate("/categories")}>Коснитесь, чтобы продолжить</p>
         </div>
     )
 }

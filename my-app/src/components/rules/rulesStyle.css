@@ -14,11 +14,11 @@
     align-items: center;
 }
 
-p {
+#rulesButton {
     opacity: .4;
     transition: all 0.4s ease;
-    /*position: relative;*/
-
+    position: relative;
+    left: 0%;
 }
 
 p:hover{

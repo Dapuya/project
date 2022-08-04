@@ -1,26 +1,22 @@
 .container {
     color: #2e9ce5;
     background-color: #eeeeee;
+    /*background-image: url("../../assets/background.png");*/
+    /*background-size: cover;*/
+    height: 100%;
+    width: 100%;
 }
 
 /*EAE7DC*/
 
-div[class*=box] {
-    height: 33.33%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .box-1 {
+    height: 100px;
+    width: 100px;
     position: absolute;
-    bottom: 2%;
-    background-color: #eeeeee;
+    bottom: 10%;
     color: #2e9ce5;
     padding-top: 20px;
 }
-
 
 .content {
     display: flex;
@@ -60,9 +56,6 @@ div[class*=box] {
     cursor: pointer;
 }
 
-img{
-
-}
 
 .button {
     margin: 5px;
