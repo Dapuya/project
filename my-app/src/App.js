@@ -16,6 +16,7 @@ function App() {
   return (
       <BrowserRouter>
           <Navbar></Navbar>
+          <Footer classname={'footer'}></Footer>
 
           <Routes>
               <Route path='/' element={<Main></Main>}/>
@@ -24,7 +25,7 @@ function App() {
               <Route path='/categories' element={<Categories></Categories>}/>
           </Routes>
 
-          <Footer></Footer>
+
 
       </BrowserRouter>
 
