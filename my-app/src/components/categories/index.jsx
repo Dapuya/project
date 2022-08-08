@@ -13,11 +13,14 @@ import sexImage from "../../assets/sex.png";
 export const Categories = () => {
     const navigate = useNavigate();
 
+    const [ color, setColor] = useState('#eeeeee');
+
     // const [item, setItem] = useState(() => categories.chosen);
 
     const handleItemIsActive = ( category ) => {
         const tappedItem = categories.findIndex((item) => item.name === category.name);
         categories[tappedItem].chosen = !category.chosen
+        setColor( color === "#95b2d9" )
         console.log(tappedItem, categories[tappedItem].chosen)
     };
 
@@ -28,7 +31,7 @@ export const Categories = () => {
             <ul id={'categoriesUnorderedList'}>
                 {categories.map((category) => (
                     <li
-                        style={{ backgroundColor: category.chosen ? '#80addc' : '#eeeeee'}}
+                        style={{ backgroundColor: color}}
                         className={'categoriesListItem'}
                         onClick={() => handleItemIsActive(category)}
                         key={category.id}

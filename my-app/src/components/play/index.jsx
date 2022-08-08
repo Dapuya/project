@@ -21,49 +21,49 @@ import categories from "../../category.json";
 
 // Q - questions
 
-const cards = [
-    {
-        id: "1",
-        variant: "moneyWork",
-        front: {moneyWorkImage},
-        back: {},
-        flip: false
-    },
-    {
-        id: "2",
-        variant: "love",
-        front: {loveImage},
-        back: {},
-        flip: false
-    },
-    {
-        id: "3",
-        variant: "personalityExperience",
-        front: {personalityExperienceImage},
-        back: {},
-        flip: false
-    },
-    {
-        id: "4",
-        variant: "relationship",
-        front: {relationshipImage},
-        back: {},
-        flip: false
-    },
-    {
-        id: "5",
-        variant: "sex",
-        front: {sexImage},
-        back: {},
-        flip: false
-    }
-];
+// const cards = [
+//     {
+//         id: "1",
+//         variant: "moneyWork",
+//         front: {moneyWorkImage},
+//         back: {},
+//         flip: false
+//     },
+//     {
+//         id: "2",
+//         variant: "love",
+//         front: {loveImage},
+//         back: {},
+//         flip: false
+//     },
+//     {
+//         id: "3",
+//         variant: "personalityExperience",
+//         front: {personalityExperienceImage},
+//         back: {},
+//         flip: false
+//     },
+//     {
+//         id: "4",
+//         variant: "relationship",
+//         front: {relationshipImage},
+//         back: {},
+//         flip: false
+//     },
+//     {
+//         id: "5",
+//         variant: "sex",
+//         front: {sexImage},
+//         back: {},
+//         flip: false
+//     }
+// ];
 
 
 export const Play = () => {
     const [random, setRandom] = useState(<img src={questionSign} width={'100px'}/>)
 
-    const [ flip, setFlip] = useState( () => cards)
+    // const [ flip, setFlip] = useState( () => cards)
 
     const handleRandomImage = () => {
         const chosenCategories = []
