@@ -1,67 +1,31 @@
 import React, {useState} from "react";
 import './style.css'
-import rules from '../../rules.json'
+import rules from '../../data/rules.json'
 import loveImage from '../../assets/love.png'
 import moneyWorkImage from '../../assets/moneyWork.png'
 import personalityExperienceImage from '../../assets/personalityExperience.png'
 import relationshipImage from '../../assets/relationship.png'
 import sexImage from '../../assets/sex.png'
 import questionSign from '../../assets/question.png';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
 
 
-import loveQ from '../../love.json'
-import moneyWorkQ from '../../moneyWork.json'
-import personalityExperienceQ from '../../personalityExperience.json'
-import sexQ from '../../sex.json'
-import relationshipQ from '../../relationship.json'
-import categories from "../../category.json";
+
+import love from '../../data/love.json'
+import moneyWork from '../../data/moneyWork.json'
+import personalityExperience from '../../data/personalityExperience.json'
+import sex from '../../data/sex.json'
+import relationship from '../../data/relationship.json'
+import categories from "../../data/category.json";
 
 
 // Q - questions
 
-// const cards = [
-//     {
-//         id: "1",
-//         variant: "moneyWork",
-//         front: {moneyWorkImage},
-//         back: {},
-//         flip: false
-//     },
-//     {
-//         id: "2",
-//         variant: "love",
-//         front: {loveImage},
-//         back: {},
-//         flip: false
-//     },
-//     {
-//         id: "3",
-//         variant: "personalityExperience",
-//         front: {personalityExperienceImage},
-//         back: {},
-//         flip: false
-//     },
-//     {
-//         id: "4",
-//         variant: "relationship",
-//         front: {relationshipImage},
-//         back: {},
-//         flip: false
-//     },
-//     {
-//         id: "5",
-//         variant: "sex",
-//         front: {sexImage},
-//         back: {},
-//         flip: false
-//     }
-// ];
-
 
 export const Play = () => {
     const [random, setRandom] = useState(<img src={questionSign} width={'100px'}/>)
+
+    const randomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+
 
     // const [ flip, setFlip] = useState( () => cards)
 
@@ -93,47 +57,36 @@ export const Play = () => {
         setRandom(<img src={randomImage} width={'80px'}/>)
 
         if (randomImage === loveImage){
-            const randomNum = Math.random()*5 - 1
-            const randomQuestion = loveQ[randomNum].question
+            const randomQuestion = love[randomInt(0, 6)]
             return (
-                <div className={'question'}> {randomQuestion} </div>
+                console.log(randomQuestion)
             )
         }
-
         else if (randomImage === personalityExperienceImage){
-            const randomNum = Math.random()*5 - 1
-            const randomQuestion = personalityExperienceQ[randomNum]
+            const randomQuestion = personalityExperience[1].question
             return (
-                <div className={'question'}> {randomQuestion} </div>
+                console.log(randomQuestion)
             )
         }
-
         else if (randomImage === moneyWorkImage){
-            const randomNum = Math.random()*5 - 1
-            const randomQuestion = moneyWorkQ[randomNum].question
+            const randomQuestion = moneyWork[1].question
             return (
-                <div className={'question'}> {randomQuestion} </div>
+                console.log(randomQuestion)
             )
         }
-
         else if (randomImage === relationshipImage){
-            if (randomImage === relationshipImage){
-                const randomNum = Math.random()*5 - 1
-                const randomQuestion = relationshipQ[randomNum].question
-                return (
-                    <div className={'question'}> {randomQuestion} </div>
-                )
-            }
-        }
+            const randomQuestion = relationship[1].question
+            return (
+                console.log(randomQuestion)
+            )
 
+        }
         else if (randomImage === sexImage){
-            if (randomImage === sexImage){
-                const randomNum = Math.random()*5-1
-                const randomQuestion = sexQ[randomNum].question
-                return (
-                    <div className={'question'}> {randomQuestion} </div>
-                )
-            }
+            const randomNum = Math.floor(Math.random() * (6))
+            const randomQuestion = sex[1].question
+            return (
+                console.log(randomQuestion)
+            )
         }
     }
 
@@ -178,7 +131,6 @@ export const Play = () => {
                 <div className="random">
                     <div onClick={handleRandomImage}>{random}</div>
                 </div>
-
             </div>
         </div>
     )

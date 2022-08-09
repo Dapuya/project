@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import './style.css'
-import categories from '../../category.json' ;
+import categories from '../../data/category.json' ;
 import { useNavigate } from "react-router-dom";
 
 import moneyWorkImage from "../../assets/moneyWork.png";
@@ -15,14 +15,16 @@ export const Categories = () => {
 
     const [ color, setColor] = useState('#eeeeee');
 
+
     // const [item, setItem] = useState(() => categories.chosen);
 
     const handleItemIsActive = ( category ) => {
         const tappedItem = categories.findIndex((item) => item.name === category.name);
         categories[tappedItem].chosen = !category.chosen
-        setColor( color === "#95b2d9" )
+
         console.log(tappedItem, categories[tappedItem].chosen)
     };
+
 
 
     return (
@@ -31,8 +33,7 @@ export const Categories = () => {
             <ul id={'categoriesUnorderedList'}>
                 {categories.map((category) => (
                     <li
-                        style={{ backgroundColor: color}}
-                        className={'categoriesListItem'}
+                        className={category.chosen ? 'categoriesListItemAfter' : 'categoriesListItemBefore'}
                         onClick={() => handleItemIsActive(category)}
                         key={category.id}
                     >{category.name} </li>
