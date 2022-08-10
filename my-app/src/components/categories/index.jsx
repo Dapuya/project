@@ -3,28 +3,18 @@ import './style.css'
 import categories from '../../data/category.json' ;
 import { useNavigate } from "react-router-dom";
 
-import moneyWorkImage from "../../assets/moneyWork.png";
-import loveImage from "../../assets/love.png";
-import personalityExperienceImage from "../../assets/personalityExperience.png";
-import relationshipImage from "../../assets/relationship.png";
-import sexImage from "../../assets/sex.png";
-
-
 export const Categories = () => {
     const navigate = useNavigate();
 
-    const [ color, setColor] = useState('#eeeeee');
-
-
-    // const [item, setItem] = useState(() => categories.chosen);
+    const [isActive, setIsActive] = useState(false);
 
     const handleItemIsActive = ( category ) => {
         const tappedItem = categories.findIndex((item) => item.name === category.name);
         categories[tappedItem].chosen = !category.chosen
 
+        setIsActive(current => !current);
         console.log(tappedItem, categories[tappedItem].chosen)
     };
-
 
 
     return (
@@ -33,7 +23,12 @@ export const Categories = () => {
             <ul id={'categoriesUnorderedList'}>
                 {categories.map((category) => (
                     <li
-                        className={category.chosen ? 'categoriesListItemAfter' : 'categoriesListItemBefore'}
+                        style={{
+                            backgroundColor: category.chosen ? '#80addc' : '#eeeeee'
+                        }}
+                        className={
+                        // isActive ? 'categoriesListItemAfter' :
+                            'categoriesListItemBefore'}
                         onClick={() => handleItemIsActive(category)}
                         key={category.id}
                     >{category.name} </li>

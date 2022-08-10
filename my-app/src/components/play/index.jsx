@@ -29,6 +29,40 @@ export const Play = () => {
 
     // const [ flip, setFlip] = useState( () => cards)
 
+    const showQuestion = (randomImage) => {
+        if (randomImage === loveImage){
+            const randomQuestion = randomInt(0, 6)
+            return (
+                console.log( love[randomQuestion].question )
+            )
+        }
+        else if (randomImage === personalityExperienceImage){
+            const randomQuestion = randomInt(0, 5)
+            return (
+                console.log(personalityExperience[randomQuestion].question)
+            )
+        }
+        else if (randomImage === moneyWorkImage){
+            const randomQuestion = randomInt(0, 5)
+            return (
+                console.log(moneyWork[randomQuestion].question)
+            )
+        }
+        else if (randomImage === relationshipImage){
+            const randomQuestion = randomInt(0, 5)
+            return (
+                console.log(relationship[randomQuestion].question)
+            )
+
+        }
+        else if (randomImage === sexImage){
+            const randomQuestion = [randomInt(0, 5)]
+            return (
+                console.log(sex[randomQuestion].question)
+            )
+        }
+    }
+
     const handleRandomImage = () => {
         const chosenCategories = []
 
@@ -56,38 +90,8 @@ export const Play = () => {
         const randomImage = chosenCategories[index]
         setRandom(<img src={randomImage} width={'80px'}/>)
 
-        if (randomImage === loveImage){
-            const randomQuestion = love[randomInt(0, 6)]
-            return (
-                console.log(randomQuestion)
-            )
-        }
-        else if (randomImage === personalityExperienceImage){
-            const randomQuestion = personalityExperience[1].question
-            return (
-                console.log(randomQuestion)
-            )
-        }
-        else if (randomImage === moneyWorkImage){
-            const randomQuestion = moneyWork[1].question
-            return (
-                console.log(randomQuestion)
-            )
-        }
-        else if (randomImage === relationshipImage){
-            const randomQuestion = relationship[1].question
-            return (
-                console.log(randomQuestion)
-            )
 
-        }
-        else if (randomImage === sexImage){
-            const randomNum = Math.floor(Math.random() * (6))
-            const randomQuestion = sex[1].question
-            return (
-                console.log(randomQuestion)
-            )
-        }
+        showQuestion(randomImage)
     }
 
 
@@ -123,8 +127,13 @@ export const Play = () => {
             <div className="game">
                 <div className="cards">
                     {categories.map((category) => (
-                        <div className={'front'}
-                        key={category.name}>{chosenCategories(category)}</div>
+                        <>
+                            <div className={'front'}
+                               key={category.name}>{chosenCategories(category)}</div>
+                            {/*<div className={'back'}*/}
+                            {/*key={category.id}>{}</div>*/}
+                        </>
+
                     ))}
                 </div>
 
