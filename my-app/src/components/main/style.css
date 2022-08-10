@@ -28,6 +28,7 @@ div[class*=box] {
     justify-content: center;
     text-align:  justify;
     z-index: 10;
+    padding-top: 15px;
 }
 
 
