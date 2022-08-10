@@ -53,3 +53,19 @@ a{
     letter-spacing: .2em;
     font-size: 14px;
 }
+
+
+
+@media screen and (max-width: 400px) {
+
+    ul {
+        padding: 10px 0;
+    }
+
+    li {
+        margin: 0 20px 0 0;
+        font-size: 12px;
+    }
+
+}
+

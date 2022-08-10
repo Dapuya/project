@@ -13,6 +13,7 @@ export const Rules = () => {
             <h3>Правила</h3>
             <ul id={'rulesOrderList'}>
                 <li classname={'categoriesListItem'}>{rules[0].text}</li>
+                <br/>
                 <li classname={'categoriesListItem'}>{rules[1].text}</li>
             </ul>
             <p id={'rulesButton'} onClick={() => navigate("/categories")}>Коснитесь, чтобы продолжить</p>

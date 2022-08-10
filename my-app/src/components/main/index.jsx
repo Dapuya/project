@@ -9,7 +9,7 @@ export const Main = () => {
     const navigate = useNavigate();
 
     return(
-        <div className={'container'} style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover'}}>
+        <div className={'container'}>
 
             {/*<img id={'background'} src={background} alt={'background'} />*/}
 

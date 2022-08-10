@@ -3,30 +3,35 @@
     "id": 1,
     "name": "Личность и опыт",
     "photo": "personalityExperience.png",
-    "chosen": false
+    "chosen": false,
+    "open":false
   },
   {
     "id": 2,
     "name": "Любовь",
     "photo": "love.png",
-    "chosen": false
+    "chosen": false,
+    "open": false
   },
   {
     "id": 3,
     "name": "Отношения с людьми",
     "photo": "relationship.png",
-    "chosen": false
+    "chosen": false,
+    "open": false
   },
   {
     "id": 4,
     "name": "Работа и деньги",
     "photo": "moneyWork.png",
-    "chosen": false
+    "chosen": false,
+    "open": true
   },
   {
     "id": 5,
     "name": "Секс",
     "photo": "sex.png",
-    "chosen": false
+    "chosen": false,
+    "open": false
   }
 ]

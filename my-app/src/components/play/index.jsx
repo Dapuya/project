@@ -7,7 +7,7 @@ import personalityExperienceImage from '../../assets/personalityExperience.png'
 import relationshipImage from '../../assets/relationship.png'
 import sexImage from '../../assets/sex.png'
 import questionSign from '../../assets/question.png';
-
+import {motion} from "framer-motion";
 
 
 import love from '../../data/love.json'
@@ -24,44 +24,11 @@ import categories from "../../data/category.json";
 export const Play = () => {
     const [random, setRandom] = useState(<img src={questionSign} width={'100px'}/>)
 
+    const [isOpen, setIsOpen] = useState(false)
+
     const randomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
-
-    // const [ flip, setFlip] = useState( () => cards)
-
-    const showQuestion = (randomImage) => {
-        if (randomImage === loveImage){
-            const randomQuestion = randomInt(0, 6)
-            return (
-                console.log( love[randomQuestion].question )
-            )
-        }
-        else if (randomImage === personalityExperienceImage){
-            const randomQuestion = randomInt(0, 5)
-            return (
-                console.log(personalityExperience[randomQuestion].question)
-            )
-        }
-        else if (randomImage === moneyWorkImage){
-            const randomQuestion = randomInt(0, 5)
-            return (
-                console.log(moneyWork[randomQuestion].question)
-            )
-        }
-        else if (randomImage === relationshipImage){
-            const randomQuestion = randomInt(0, 5)
-            return (
-                console.log(relationship[randomQuestion].question)
-            )
-
-        }
-        else if (randomImage === sexImage){
-            const randomQuestion = [randomInt(0, 5)]
-            return (
-                console.log(sex[randomQuestion].question)
-            )
-        }
-    }
+    const [question , setQuestion] = useState('')
 
     const handleRandomImage = () => {
         const chosenCategories = []
@@ -88,10 +55,31 @@ export const Play = () => {
 
         const index = Math.floor(Math.random() * chosenCategories.length);
         const randomImage = chosenCategories[index]
-        setRandom(<img src={randomImage} width={'80px'}/>)
+        setRandom(<img src={randomImage} width={'60px'}/>)
+        setIsOpen(!isOpen)
 
 
-        showQuestion(randomImage)
+        if (randomImage === loveImage) {
+            const randomNumber = randomInt(0, 17)
+            setQuestion(love[randomNumber].question)
+        }
+        if (randomImage === personalityExperienceImage) {
+            const randomNumber = randomInt(0, 19)
+            setQuestion(personalityExperience[randomNumber].question)
+        }
+        if (randomImage === moneyWorkImage) {
+            const randomNumber = randomInt(0, 22)
+            setQuestion(moneyWork[randomNumber].question)
+        }
+        if (randomImage === relationshipImage) {
+            const randomNumber = randomInt(0, 23)
+            setQuestion(relationship[randomNumber].question)
+        }
+        if (randomImage === sexImage) {
+            const randomNumber = randomInt(0, 23)
+            setQuestion(sex[randomNumber].question)
+        }
+
     }
 
 
@@ -122,24 +110,33 @@ export const Play = () => {
         }
     }
 
+
     return(
         <div className={'container'}>
             <div className="game">
                 <div className="cards">
                     {categories.map((category) => (
+                        <div className={'front'}
+                             key={category.name}>{chosenCategories(category)}
+                        </div>))}
+                </div>
+
+                <motion.div
+                    transition={{layout : {duration: 1, type: "spring"}}}
+                    layout
+                    className="random">
+                    <motion.div layout={"position"} onClick={handleRandomImage} className={'image'}>{random}</motion.div>
+                    {isOpen && (
                         <>
-                            <div className={'front'}
-                               key={category.name}>{chosenCategories(category)}</div>
-                            {/*<div className={'back'}*/}
-                            {/*key={category.id}>{}</div>*/}
+                            <motion.div
+                            initial={{opacity: 0}}
+                            animate={{opacity: 1}}
+                            className={'question'}>{question}</motion.div>
+                            {/*<p id={'next'} onClick={handleRandomImage}>Cледующий вопрос</p>*/}
                         </>
+                    )}
 
-                    ))}
-                </div>
-
-                <div className="random">
-                    <div onClick={handleRandomImage}>{random}</div>
-                </div>
+                </motion.div>
             </div>
         </div>
     )

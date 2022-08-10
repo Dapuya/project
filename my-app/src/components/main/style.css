@@ -35,7 +35,7 @@ div[class*=box] {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 300px;
+    width: 350px;
 }
 
 .words {
@@ -45,7 +45,7 @@ div[class*=box] {
 
 .text h3{
     width: 300px;
-    font-size: 20px;
+    font-size: 18px;
     margin: 40px;
     text-align: center;
 }
@@ -124,5 +124,44 @@ div[class*=box] {
 .btn-one:hover::after {
     opacity: 0;
     transform: scale(0.1, 1);
+}
+
+@media screen and (min-width: 720px) {
+    #text {
+        font-size: 18px;
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    #text {
+        width: 300px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    #text {
+        width: 250px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    #text {
+        width: 200px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+
+    #text {
+        width: 150px;
+        font-size: 12px;
+    }
 }
 
