@@ -26,12 +26,5 @@
     "photo": "moneyWork.png",
     "chosen": false,
     "open": true
-  },
-  {
-    "id": 5,
-    "name": "Секс",
-    "photo": "sex.png",
-    "chosen": false,
-    "open": false
   }
 ]
